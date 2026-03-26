@@ -1,14 +1,7 @@
 import { Router, Request, Response } from 'express';
-import { HealthCheckManager } from '../config/health.js';
-import { Logger } from '../config/logger.js';
-import { Config } from '../config/env.js';
 
 export const healthRouter = Router();
 
-/**
- * GET /health - Liveness probe
- * Returns 200 if service is running
- */
 healthRouter.get('/', (_req: Request, res: Response) => {
   res.json({
     status: 'ok',
